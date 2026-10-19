@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, ArrowUpRight, Instagram, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -186,7 +186,7 @@ function VastraHome() {
             <div className="arrival-progress"><span className="arrival-progress-value" /></div>
             <div className="arrivals-track" ref={arrivalsTrack}>
               {arrivals.map((item, index) => (
-                <a className={`arrival-card reveal${index % 2 ? " arrival-card-lower" : ""}`} href="#contact" key={item.name} style={{ "--reveal-delay": `${index * 65}ms` } as React.CSSProperties}>
+                  <a className={`arrival-card reveal${index % 2 ? " arrival-card-lower" : ""}`} href="#contact" key={item.name} style={{ "--reveal-delay": `${index * 65}ms` } as CSSProperties}>
                   <div className="arrival-photo"><img src={item.image} alt={`${item.name} ${item.color} silk saree`} width={502} height={760} loading="lazy" /><span className="photo-arrow"><ArrowUpRight size={17} /></span></div>
                   <div className="arrival-details"><span>{item.color} · New season</span><h3>{item.name}</h3></div>
                 </a>
@@ -201,7 +201,7 @@ function VastraHome() {
         <div className="color-heading reveal"><span className="eyebrow">Find your hue</span><h2>Shop by <em>colour.</em></h2><p>A colour for every kind of becoming.</p></div>
         <div className="color-gallery" id="categories">
           {colors.map((color, index) => (
-            <a className={`color-arch ${color.className} reveal`} href="#new-arrivals" key={color.name} style={{ "--reveal-delay": `${index * 75}ms` } as React.CSSProperties}>
+            <a className={`color-arch ${color.className} reveal`} href="#new-arrivals" key={color.name} style={{ "--reveal-delay": `${index * 75}ms` } as CSSProperties}>
               <span className="arch-number">0{index + 1}</span><span className="arch-label">{color.name}</span><span className="arch-note">{color.note}</span><span className="arch-arrow"><ArrowUpRight size={18} /></span>
             </a>
           ))}
@@ -213,7 +213,7 @@ function VastraHome() {
         <div className="bestsellers-copy reveal"><span className="eyebrow">A few favourites</span><h2>Our most<br /><em>loved.</em></h2><p>The drapes you reach for, remember, and pass down. VASTRA, at its most adored.</p><a className="text-link-light" href="#contact">Explore all <span>●</span><ArrowRight size={15} /></a></div>
         <div className="bestseller-gallery">
           {bestSellers.map((item, index) => (
-            <a className={`bestseller-card reveal${index % 2 === 1 ? " bestseller-card-lower" : ""}`} href="#contact" key={item.name} style={{ "--reveal-delay": `${index * 85}ms` } as React.CSSProperties}>
+            <a className={`bestseller-card reveal${index % 2 === 1 ? " bestseller-card-lower" : ""}`} href="#contact" key={item.name} style={{ "--reveal-delay": `${index * 85}ms` } as CSSProperties}>
               <div className="bestseller-photo"><img src={item.image} alt={`${item.name}, ${item.color} organza saree`} width={505} height={760} loading="lazy" /><span><ArrowUpRight size={18} /></span></div>
               <div className="bestseller-caption"><h3>{item.name}</h3><span>{item.color} · Organza</span></div>
             </a>
